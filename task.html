@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment-3</title>
+    <script>
+        function validate(){
+        var zip = document.getElementById("zip").value;
+        var reg_zip=/^[0-9]{6}$/;
+        if(reg_zip.test(zip)){
+            document.getElementById("id1").style.visibility="visible";
+            document.getElementById("id1").style.color="green";
+            document.getElementById("id1").innerHTML="VALID ZIPCODE...!!"
+        }
+        else{
+            document.getElementById("id1").style.visibility="visible";
+        }
+        var uname = document.getElementById("username").value;
+        var reg_uname=/^[a-z A-Z][a-z A-Z \. _ 1-9]{5,7}$/
+        if(reg_uname.test(uname)){
+            document.getElementById("id2").style.visibility="visible";
+            document.getElementById("id2").style.color="green";
+            document.getElementById("id2").innerHTML="VALID USERNAME...!!"
+        }
+        else{
+            document.getElementById("id2").style.visibility="visible";
+        }
+        var mail = document.getElementById("email").value;
+        var regx = /^([a-zA-Z0-9\.-]+)(@)([a-zA-Z0-9-]+)(\.[a-z]{2,20})(\.[a-z]{2,20})?$/
+        if(regx.test(mail)){
+            document.getElementById("id3").style.visibility="visible";
+            document.getElementById("id3").style.color="green";
+            document.getElementById("id3").innerHTML="VALID E-MAIL...!!"
+        }
+        else{
+            document.getElementById("id3").style.visibility="visible";
+        }
+        }
+    </script>
+    <style type="text/css">
+        div{
+            background-color:yellow;
+            padding: 10px;
+          }
+       
+    input{
+        padding: 10px;
+        
+    }
+    </style>
+</head>
+<body><centre>
+    <h1>CS3403_ASSIGNMENT-3</h1>
+</centre>
+
+    <form style="display: inline-block;">
+           
+    <div>
+        First Name:
+        <input type="text" id="firstname" required><br>
+    </div>
+    <div>
+        Address:
+        <input type="text" id="address" required><br>
+    </div>
+    <div>
+        Zip Code:
+        <input type="text" id="zip">
+        <span id="id1" style="visibility: hidden;color: red;">INVALID ZIPCODE...!!</span>
+    </div>
+    <div>
+        State:
+        <select>
+	<option value="AP">Andhra Pradesh</option>
+	<option value="AR">Arunachal Pardesh</option>
+	<option value="AS">Assam</option>
+	<option value="BR">Bihar</option>
+	<option value="CH">Chhattisgarh</option>
+	<option value="GA">Goa</option>
+	<option value="GJ">Gujarat</option>
+	<option value="HR">Haryana</option>
+	<option value="HP">Himachal Pardesh</option>
+	<option value="JK">Jammu and Kashmir</option>
+	<option value="JH">Jharkhand</option>
+	<option value="KA">Karnataka</option>
+  <option value="KL">Kerala</option>
+  <option value="MP">Madhya Pardesh</option>
+  <option value="MH">Maharashtra</option>
+  <option value="MN">Manipur</option>
+  <option value="ML">Meghalaya</option>
+  <option value="MZ">Mizoroam</option>
+  <option value="NL">Nagaland</option>
+  <option value="OR">Orissa</option>
+  <option value="PN">Punjab</option>
+  <option value="RJ">Rajasthan</option>
+  <option value="SK">Sikkim</option>
+  <option value="TN">Tamil Nadu</option>
+  <option value="TL">Teleangana</option>
+  <option value="TR">Tripura</option>
+  <option value="UP">Uttar Pradesh</option>
+  <option value="UK">Uttarakhand</option>
+  <option value="WB">West Bengal</option>
+  
+</select><br>
+    </div>
+    <div>
+        Username(6-8 characters): <input type="text" id="username">
+        <span id="id2" style="visibility: hidden;color: red;">INVALID USERNAME...!!</span><br>
+    </div>
+    <div>
+        E-mail:
+        <input type="text" id="email">
+        <span id="id3" style="visibility: hidden;color: red;">INVALID E-MAIL...!!</span>
+        <br>
+    </div>
+    <button type="button" onclick="validate()"><h2>Check Form</h2></button>
+    
+    </form>
+</body>
+</html>
